@@ -70,35 +70,33 @@ policyradar/
 ├── README.md
 └── instructions.md
 
-```mermaid
-flowchart LR
-  %% Title
-  classDef title fill:#eaf4ff,stroke:#7aa7ff,color:#1c3d6e,font-weight:bold;
-  T[PolicyRadar 系統架構圖（雙流程）]:::title
-
-  U([使用者 User])
-  CLI[[CLI 指令介面<br/>policyradar.py]]
-
-  subgraph UpdateFlow[資料更新管線 (--update)]
-    F[資料擷取<br/>YouTube API + Dcard]
-    RAW[(data/raw)]
-    P[資料前處理<br/>清洗 / 去重 / 正規化]
-    AI[[AI 分析 (GPT)<br/>立場分類 + 爭議摘要]]
-    PROC[(data/processed)]
-  end
-
-  subgraph QueryFlow[查詢/輸出管線 (--support / --trend / --reasons)]
-    M[統計分析<br/>支持度 / 情緒 / 趨勢]
-    OUT[[輸出結果<br/>CLI 顯示 / 圖表 / 報告]]
-  end
-
-  T --- U --> CLI
-  CLI -- "--update" --> F --> RAW --> P --> AI --> PROC
-  CLI -- 查詢指令 --> M
-  PROC --> M --> OUT
-
+```
 
 ```
+flowchart LR
+    %% PolicyRadar 系統架構圖（雙流程）
+
+    U([使用者 User])
+    CLI[[CLI 指令介面 (policyradar.py)]]
+
+    subgraph UpdateFlow[資料更新管線 (--update)]
+        F[資料擷取：YouTube API + Dcard]
+        RAW[(data/raw)]
+        P[資料前處理：清洗 / 去重 / 正規化]
+        AI[[AI 分析 (GPT)：立場分類 + 爭議摘要]]
+        PROC[(data/processed)]
+    end
+
+    subgraph QueryFlow[查詢/輸出管線 (--support / --trend / --reasons)]
+        M[統計分析：支持度 / 情緒 / 趨勢]
+        OUT[[輸出結果：CLI 顯示 / 圖表 / 報告]]
+    end
+
+    U --> CLI
+    CLI -- --update --> F --> RAW --> P --> AI --> PROC
+    CLI -- 查詢指令 --> M
+    PROC --> M --> OUT
+
 
 ---
 
@@ -147,6 +145,7 @@ AI 分析已完成
 * **拆解需求與整理 CLI 規格**
 * **提出檔案架構與資料流程圖**
 * **協助產生技術規劃與 Proposal 文件**
+
 
 
 
