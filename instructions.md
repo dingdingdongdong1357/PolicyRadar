@@ -1,10 +1,10 @@
 社會科學程式設計｜期末專案 Proposal  
 作者：社會五丁祈  
 
-# PolicyRadar：租屋補貼政策網路支持度分析工具（YouTube + Dcard + AI）
+# RentSubsidy Radar：租屋補貼政策網路支持度分析工具（YouTube + Dcard + AI）
 
 ### 專案摘要
-PolicyRadar 是一個結合 YouTube 與 Dcard 輿論資料，並運用 AI 進行分析的 **政策輿情分析 CLI 工具 (Command Line Interface)**，用於追蹤「租屋補貼」政策的**支持度、反對理由、輿情趨勢與爭議點**。使用者可透過指令互動進行查詢，並可手動更新資料 (`--update`) 以獲得最新結果。
+RentSubsidy Radar 是一個結合 YouTube 與 Dcard 輿論資料，並運用 AI 進行分析的 **政策輿情分析 CLI 工具 (Command Line Interface)**，用於追蹤「租屋補貼」政策的**支持度、反對理由、輿情趨勢與爭議點**。使用者可透過指令互動進行查詢，並可手動更新資料 (`--update`) 以獲得最新結果。
 
 ## 一、專案描述
 
@@ -26,11 +26,11 @@ PolicyRadar 是一個結合 YouTube 與 Dcard 輿論資料，並運用 AI 進行
 
 | 功能 | 說明 | CLI 指令範例 |
 |------|------|---------------|
-| 支持度分析 | 顯示支持/反對比例 | `python policyradar.py --metric support` |
-| 輿論趨勢 | 顯示熱度變化與討論量 | `python policyradar.py --trend 30` |
-| 主要爭議點摘要 | AI 自動彙整支持與反對理由 | `python policyradar.py --view reasons` |
-| 資料更新 | 抓最新 YouTube + Dcard 輿情資料 | `python policyradar.py --update` |
-| 平台比較 | 比較 YouTube 與 Dcard立場差異 | `python policyradar.py --compare platform` |
+| 支持度分析 | 顯示支持/反對比例 | `python RentSubsidy Radar.py --metric support` |
+| 輿論趨勢 | 顯示熱度變化與討論量 | `python RentSubsidy Radar.py --trend 30` |
+| 主要爭議點摘要 | AI 自動彙整支持與反對理由 | `python RentSubsidy Radarr.py --view reasons` |
+| 資料更新 | 抓最新 YouTube + Dcard 輿情資料 | `python RentSubsidy Radar.py --update` |
+| 平台比較 | 比較 YouTube 與 Dcard立場差異 | `python RentSubsidy Radar.py --compare platform` |
 
 ## 四、Tech Stack（使用技術）
 
@@ -50,7 +50,7 @@ PolicyRadar 是一個結合 YouTube 與 Dcard 輿論資料，並運用 AI 進行
 
 ```
 
-policyradar/
+RentSubsidy Radar/
 │
 ├── src/
 │   ├── cli.py              # 主 CLI 介面
@@ -77,10 +77,10 @@ policyradar/
 
 ```mermaid
 flowchart LR
-    %% PolicyRadar 系統架構圖（雙流程）
+    %%RentSubsidy Radar 系統架構圖（雙流程）
 
     U([使用者 User])
-    CLI[[CLI 指令介面 / policyradar.py]]
+    CLI[[CLI 指令介面 /RentSubsidy Radar.py]]
 
     subgraph UpdateFlow[資料更新管線 --update]
         F[資料擷取：YouTube API + Dcard]
@@ -108,7 +108,7 @@ flowchart LR
 **指令：**
 ```
 
-python policyradar.py --metric support
+python RentSubsidy Radar.py --metric support
 
 ```
 **輸出：**
@@ -126,7 +126,7 @@ python policyradar.py --metric support
 **指令：**
 ```
 
-python policyradar.py --update
+python RentSubsidy Radar.py --update
 
 ```
 **輸出：**
@@ -147,6 +147,7 @@ AI 分析已完成
 * **拆解需求與整理 CLI 規格**
 * **提出檔案架構與資料流程圖**
 * **協助產生技術規劃與 Proposal 文件**
+
 
 
 
