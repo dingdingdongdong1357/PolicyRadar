@@ -100,6 +100,7 @@ flowchart LR
     CLI -->|查詢指令| M
     PROC --> M --> OUT
 
+```
 
 ## 七、範例（Example Input / Output）
 
@@ -146,6 +147,7 @@ AI 分析已完成
 * **拆解需求與整理 CLI 規格**
 * **提出檔案架構與資料流程圖**
 * **協助產生技術規劃與 Proposal 文件**
+
 
 
 
