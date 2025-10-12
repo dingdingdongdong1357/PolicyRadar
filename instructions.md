@@ -72,6 +72,9 @@ policyradar/
 
 ```
 
+
+## 六、系統架構圖（Mermaid）
+
 ```mermaid
 flowchart LR
     %% PolicyRadar 系統架構圖（雙流程）
@@ -83,7 +86,7 @@ flowchart LR
         F[資料擷取：YouTube API + Dcard]
         RAW[(data/raw)]
         P[資料前處理：清洗 / 去重 / 正規化]
-        AI[[AI 分析 (GPT)：立場分類 + 爭議摘要]]
+        AI[[AI 分析 (GPT)：立場分類 + 專議摘要]]
         PROC[(data/processed)]
     end
 
@@ -98,7 +101,7 @@ flowchart LR
     PROC --> M --> OUT
 
 
-## 六、範例（Example Input / Output）
+## 七、範例（Example Input / Output）
 
 ### 查詢支持度比例
 **指令：**
@@ -143,6 +146,7 @@ AI 分析已完成
 * **拆解需求與整理 CLI 規格**
 * **提出檔案架構與資料流程圖**
 * **協助產生技術規劃與 Proposal 文件**
+
 
 
 
