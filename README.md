@@ -86,15 +86,17 @@ AI 會分析爆炸原因與輿情特徵。
 
 ## 🧱 System Architecture（系統架構）
 
+
 ```mermaid
 flowchart TD
-    A[YouTube Data API\n(抓 TVBS/SETN 新聞＋留言)] --> B[SQLite 資料庫]
-    B --> C[Issue Classification\n(OpenAI API)]
-    B --> D[Sentiment & Stance Analysis\n(OpenAI API)]
-    B --> E[Comment Count Stats\n(留言統計)]
-    E --> F[Anomaly Detection\n留言暴衝偵測]
-    C --> G[TVBS vs SETN 話題差異分析]
+    A[YouTube Data API<br>抓取 TVBS / SETN 新聞與留言] --> B[SQLite 資料庫]
+    B --> C[Issue Classification<br>議題分類（OpenAI）]
+    B --> D[Sentiment & Stance Analysis<br>情緒與立場分析（OpenAI）]
+    B --> E[Comment Count Stats<br>留言統計]
+    E --> F[Anomaly Detection<br>爆炸事件偵測]
+    C --> G[TVBS vs SETN<br>議題差異比較]
     D --> G
-    F --> H[事件輿情摘要生成\n(OpenAI API)]
+    F --> H[Event Summary Generation<br>輿情摘要（OpenAI）]
     G --> H
-    H --> I[Report / Dashboard / CSV]
+    H --> I[Report / Dashboard / CSV 輸出]
+
